@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <img class="logo" src="galgotiascollege.jpg" alt="Company Logo">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#feedback-form">Give Feedback</a></li>
+                <li><a href="#view-feedbacks">View Feedbacks</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Your Feedback Matters</h1>
+        <p>We’d love to hear about your experience to help us improve!</p>
+        <button><a href="#feedback-form">Give Feedback</a></button>
+    </section>
+
+    <!-- Feedback Form -->
+    <section id="feedback-form">
+        <h2>Share Your Feedback</h2>
+        <form action="submit-feedback" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name (Optional)</label>
+                <input type="text" id="name" name="name" placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email (Optional)</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="rating">How would you rate your experience?</label>
+                <select id="rating" name="rating" required>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Additional Comments</label>
+                <textarea id="comments" name="comments" placeholder="Please share your thoughts..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="submit-button">Submit Feedback</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Confirmation Section (hidden by default) -->
+    <section class="confirmation" style="display:none;">
+        <h3>Thank You for Your Feedback!</h3>
+        <p>Your feedback is incredibly valuable to us. We'll use it to improve our services and experience.</p>
+    </section>
+
+    <!-- View Feedback Section -->
+    <section id="view-feedbacks">
+        <h2>View Submitted Feedback</h2>
+        <div id="feedback-list"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+       
+        <div class="social-media">
+            <a href="https://twitter.com"><img src="twitter.png" alt="Twitter"></a>
+            <a href="https://google.com"><img src="google.png" alt="Facebook"></a>
+            <a href="https://instagram.com"><img src="instagram.jpg" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script src="feedback.js"></script>
+</body>
+
+</html>

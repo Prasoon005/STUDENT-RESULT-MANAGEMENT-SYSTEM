@@ -1,0 +1,193 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Container */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+    background-color: #566c5c;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Section */
+header {
+    background: linear-gradient(to right, #4CAF50, #45a049); /* Green Gradient */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+header:hover {
+    background-color: #45a049;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Introduction Section */
+.intro-section {
+    background-color: #ffffff; /* White background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.intro-section:hover {
+    transform: translateY(-10px);
+}
+
+.intro-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #2e8b57; /* Green color for headings */
+}
+
+.intro-section p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.intro-section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.intro-section ul li {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+/* Features Section */
+.features-section {
+    background-color: #f9fafb; /* Light Gray */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.features-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333; /* Darker text color */
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background-color: #bbd6df; /* White background for cards */
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 1rem;
+}
+
+/* Technologies Section */
+.technologies-section {
+    background-color: #ffffff; /* White background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.technologies-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333; /* Darker text color */
+}
+
+.tech-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tech-item {
+    background-color: #bbd6df; /* Light Gray */
+    padding: 20px;
+    border-radius: 8px;
+    width: 45%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.tech-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.tech-item p {
+    font-size: 1rem;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333; /* Dark footer background */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+/* Add some responsive adjustments */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature, .tech-item {
+        width: 80%;
+    }
+}
