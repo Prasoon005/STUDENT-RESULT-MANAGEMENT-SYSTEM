@@ -1,0 +1,194 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Feedback Form Styles */
+#feedback-form {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#feedback-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height: 150px;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+/* Confirmation Section */
+.confirmation {
+    text-align: center;
+    background-color: #e7f5e7;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* View Feedback Section */
+#view-feedbacks {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#view-feedbacks h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feedback-item {
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-item p {
+    margin: 5px 0;
+}
+
+.feedback-item .name {
+    font-weight: bold;
+}
+
+.feedback-item .rating {
+    color: #4CAF50;
+}
+
+.feedback-item .comments {
+    font-style: italic;
+}
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .social-media {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer .social-media a {
+    margin: 0 15px;
+}
+
+footer .social-media a img {
+    width: 60px;
+    height: 40px;
+}

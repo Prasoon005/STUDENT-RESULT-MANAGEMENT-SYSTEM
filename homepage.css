@@ -1,0 +1,172 @@
+/* Global reset and box-sizing for consistent styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+    color: #fff; /* White text for better contrast on dark backgrounds */
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blurred background effect */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+header img {
+    width: 260px; /* Adjust the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Rounded corners to make the image rectangular */
+    border: 3px solid #fff; /* White border around the image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
+}
+
+header .logo {
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Hero section */
+.background {
+    padding: 100px 20px 50px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4); /* Dark semi-transparent background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-top: 80px; /* Offset from fixed header */
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text p {
+    font-size: 20px;
+    color: #f1f1f1;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Box container to hold individual links */
+.box-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+/* Individual box styling */
+.box {
+    background-color: #fff;
+    padding: 30px;
+    text-align: center;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    opacity: 0.15;
+    transition: opacity 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-10px); /* Hover lift effect */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.box:hover::after {
+    opacity: 0.3; /* Increase the gradient overlay effect on hover */
+}
+
+.box h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.box p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Link styling */
+.box-link {
+    text-decoration: none;
+    color: inherit; /* Inherit text color */
+}
+
+.box-link:hover h2 {
+    color: #ff7e5f; /* Color change on hover */
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .box-container {
+        flex-direction: column; /* Stack boxes vertically */
+        align-items: center;
+    }
+
+    .box {
+        width: 90%; /* Boxes are 90% of the screen width */
+        margin-bottom: 30px; /* Add margin between stacked boxes */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    header img {
+        margin-bottom: 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 32px; /* Adjust font size for smaller screens */
+    }
+
+    .hero-text p {
+        font-size: 18px;
+    }
+}

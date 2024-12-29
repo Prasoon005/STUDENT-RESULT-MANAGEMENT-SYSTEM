@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creators of Student Marks Management</title>
+    <style>
+        /* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header section */
+header {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0; /* Increased padding */
+    transition: background-color 0.3s ease-in-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Team section */
+.team-section {
+    background-color: #fff;
+    padding: 50px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 1500px; /* Increased max-width */
+    margin: 30px auto;
+}
+
+/* Title of the team section */
+.team-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Team members container */
+.team-members {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; /* Allows wrapping if necessary */
+    gap: 40px;
+    align-items: flex-start; /* Align items at the top */
+}
+
+/* Individual team member */
+.team-member {
+    width: 320px;  /* Increased width */
+    height: 450px; /* Increased height */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for team member */
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling for team member */
+.team-member img {
+    width: 180px; /* Increased image size */
+    height: 180px; /* Increased image size */
+    border-radius: 50%;
+    border: 4px solid #4CAF50;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover effect on images */
+.team-member img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Team member name */
+.team-member h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Role of the team member */
+.team-member p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Description of the team member */
+.team-member .description {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Hover effect for header */
+header:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 85%;  /* Reduce width on medium screens */
+        height: auto;  /* Adjust height */
+        margin-bottom: 40px;
+    }
+
+    header h1 {
+        font-size: 40px;
+    }
+
+    .team-section h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 90%;  /* Full width for small screens */
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    .team-section h2 {
+        font-size: 28px;
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Creators of Student Marks Management System</h1>
+    </header>
+
+    <!-- Team Section -->
+    <div class="team-section">
+        <h2>Meet the Creators</h2>
+        <div class="team-members">
+            <!-- First team member -->
+            <div class="team-member">
+                <img src="prasoon.jpg" alt="Creator 1">
+                <h3>Prasoon katiyar</h3>
+                <p>Lead Developer</p>
+                <p class="description">Prasoon is the backbone of the development team. He specializes in front-end technologies and has years of experience in building scalable web applications.</p>
+            </div>
+            <!-- Second team member -->
+            <div class="team-member">
+                <img src="om_2.jpg" alt="Creator 2">
+                <h3>Om tripathi</h3>
+                <p>Frontend developer</p>
+                <p class="description">Om brings creativity to the team, designing intuitive user interfaces and delivering exceptional user experiences for the application.</p>
+            </div>
+            <!-- Third team member -->
+            <div class="team-member">
+                <img src="harshit.jpg" alt="Creator 3">
+                <h3>Harshit katiyar</h3>
+                <p>Project Manager</p>
+                <p class="description">Harshit ensures that the project runs smoothly by managing timelines, resources, and keeping the team motivated to meet deadlines.</p>
+            </div>
+            <!-- Fourth team member -->
+            <div class="team-member">
+                <img src="prakhar.jpg" alt="Creator 4">
+                <h3>Prakhar sharma</h3>
+                <p>Backend Developer</p>
+                <p class="description">Prakhar handles the server-side logic and database integration, ensuring that the application is efficient and data is handled securely.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
