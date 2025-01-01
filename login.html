@@ -3,51 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Result Management System</title>
-    <link rel="stylesheet" href="login.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js Library -->
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"> <!-- Import Google Font -->
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+            filter: brightness(0.9); /* Optional: slightly dimmed background */
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif; /* Custom font for heading */
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05); /* Slight zoom-in on hover */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .button:focus {
+            outline: none;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="segment">
-            <h1>Student Result Management</h1>
-            <div class="form-container">
-                <h2>Add Student and Result</h2>
-                <form id="studentForm">
-                    <div class="input-group">
-                        <label for="roll_no">Roll Number</label>
-                        <input type="text" id="roll_no" placeholder="Enter Roll Number" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="name">Student Name</label>
-                        <input type="text" id="name" placeholder="Enter Student Name" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" placeholder="Enter Subject" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="marks">Marks</label>
-                        <input type="number" id="marks" placeholder="Enter Marks" required>
-                    </div>
-                    <button type="submit">Add Result</button>
-                </form>
-            </div>
-        </div>
 
-        <div class="segment">
-            <h2>Student Results with Grades</h2>
-            <div class="result-container">
-                <input type="text" id="search_roll_no" placeholder="Enter Roll Number to search">
-                <button onclick="getStudentResults()">Search</button>
-                <ul id="resultList"></ul>
-            </div>
-            <div class="chart-container">
-                <canvas id="resultChart"></canvas> <!-- Canvas for Pie Chart -->
-            </div>
-        </div>
+<h1>STUDENT RESULT MANAGEMENT SYSTEM</h1>
+
+<div class="container">
+    <h2>Login</h2>
+    <div>
+        <label for="loginName">Name</label>
+        <input type="text" id="loginName" placeholder="Enter your name" required>
     </div>
+    <div>
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter password" required>
+    </div>
+    <button class="button" onclick="handleLogin()">Login</button>
+    <div class="nav-links">
+        <a href="homepage.html">Back to Homepage</a>
+        <a href="index.html">Back to Index</a>
+    </div>
+</div>
 
-    <script src="login.js"></script>
+<script>
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
+    function handleLogin() {
+        const name = document.getElementById('loginName').value;
+        const password = document.getElementById('loginPassword').value;
+
+        const user = users.find(user => user.name === name && user.password === password);
+
+        if (user) {
+            localStorage.setItem('loggedInStudent', name);  // Store the logged-in student's name
+            if (user.role === "teacher") {
+                window.location.href = 'teacher.html';
+            } else {
+                window.location.href = 'student.html';
+            }
+        } else {
+            alert("Invalid credentials.");
+        }
+    }
+</script>
+
 </body>
 </html>
