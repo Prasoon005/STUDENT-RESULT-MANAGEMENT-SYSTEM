@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+            flex-direction: column; /* Stack content vertically */
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;  /* Ensure space from the top */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        }
+
+        h2 {
+            color: #333;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #555;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px); /* Slight upward shift on hover */
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .button:focus {
+            outline: none;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<h1>STUDENT RESULT MANAGEMENT SYSTEM</h1>
+
+<div class="container">
+    <h2>Teacher Portal</h2>
+    <h3>Enter Student Results</h3>
+    <div>
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" placeholder="Enter Subject" required>
+    </div>
+    <div>
+        <label for="studentName">Student Name</label>
+        <input type="text" id="studentName" placeholder="Enter Student Name" required>
+    </div>
+    <div>
+        <label for="studentResult">Result</label>
+        <input type="text" id="studentResult" placeholder="Enter Student Result" required>
+    </div>
+    <button class="button" onclick="saveStudentResult()">Save Result</button>
+    <div class="nav-links">
+        <a href="homepage.html">Back to Homepage</a>
+        <a href="index.html">Back to Index</a>
+    </div>
+</div>
+
+<script>
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
+    function saveStudentResult() {
+        const subject = document.getElementById('subject').value;
+        const studentName = document.getElementById('studentName').value;
+        const studentResult = document.getElementById('studentResult').value;
+
+        const teacher = users.find(user => user.role === "teacher");
+
+        // Find the student by name
+        const student = users.find(user => user.name === studentName && user.role === "student");
+
+        if (subject && studentName && studentResult && student) {
+            // Store the result under the student's profile
+            student.results.push({ subject, studentResult });
+            localStorage.setItem('users', JSON.stringify(users));
+            alert("Result saved!");
+        } else {
+            alert("Invalid student name or missing data.");
+        }
+    }
+</script>
+
+</body>
+</html>

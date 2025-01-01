@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> <!-- Import Google Font -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #333;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Adjusts the layout to stack content vertically */
+            height: 100vh;
+            box-sizing: border-box;
+            filter: brightness(0.8); /* Optional: darkens the background image for better readability */
+            overflow: hidden;
+        }
+        
+        h1 {
+            font-family: 'Roboto', sans-serif; /* Custom font for the main heading */
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 40px; /* Adds space between the heading and container */
+            text-transform: uppercase; /* Optional: to make the text uppercase */
+            letter-spacing: 2px; /* Optional: adds spacing between letters */
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(255, 255, 255); /* Semi-transparent white background */
+            border-radius: 8px;
+            border: 2px solid black; /* Black border */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 80%;
+            max-width: 800px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+            border-color: #4CAF50; /* Change border color on hover */
+        }
+
+        .content {
+            width: 50%;
+            padding-right: 30px;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: fadeInRight 1s forwards;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        p {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .buttons {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 250px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 10px 0; /* Creates space between buttons */
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        /* This is the key change: add a bit more margin to the second button */
+        .button + .button {
+            margin-top: 20px; /* Adds one line gap between Login and Sign Up */
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .button:focus {
+            outline: none;
+        }
+
+        .button-heading {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>STUDENT RESULT MANAGEMENT SYSTEM</h1> <!-- Custom Heading -->
+    <div class="container">
+        <div class="content">
+            <h2>Welcome to the Portal</h2>
+            <p>To manage your student marks and access additional features, you can either log in if you already have an account or sign up to create a new one.</p>
+            <p><strong>Login:</strong> Use your credentials to access the system and view or update your marks.</p>
+            <p><strong>Sign Up:</strong> If you are a new user, create an account to start managing your marks and access student resources.</p>
+        </div>
+        
+        <div class="buttons">
+            <div class="button-heading">Login</div>
+            <button class="button" onclick="window.location.href='login.html'">Login</button>
+            
+            <div class="button-heading">Sign Up</div>
+            <button class="button" onclick="window.location.href='signup.html'">Sign Up</button>
+        </div>
+    </div>
+</body>
+</html>

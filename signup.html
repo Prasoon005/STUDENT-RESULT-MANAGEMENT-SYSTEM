@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"> <!-- Import Google Font -->
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+            filter: brightness(0.9); /* Optional: slightly dimmed background */
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif; /* Custom font for heading */
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05); /* Slight zoom-in on hover */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .button:focus {
+            outline: none;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<h1>STUDENT RESULT MANAGEMENT SYSTEM</h1>
+
+<div class="container">
+    <h2>Sign Up</h2>
+    <div>
+        <label for="signUpName">Name</label>
+        <input type="text" id="signUpName" placeholder="Enter your name" required>
+    </div>
+    <div>
+        <label for="signUpPassword">Password</label>
+        <input type="password" id="signUpPassword" placeholder="Enter password" required>
+    </div>
+    <div>
+        <label for="roleSelect">Role</label>
+        <select id="roleSelect">
+            <option value="teacher">Teacher</option>
+            <option value="student">Student</option>
+        </select>
+    </div>
+    <button class="button" onclick="handleSignUp()">Sign Up</button>
+    <div class="nav-links">
+        <a href="homepage.html">Back to Homepage</a>
+        <a href="index.html">Back to Index</a>
+    </div>
+</div>
+
+<script>
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
+    function handleSignUp() {
+        const name = document.getElementById('signUpName').value;
+        const password = document.getElementById('signUpPassword').value;
+        const role = document.getElementById('roleSelect').value;
+        
+        if (name && password) {
+            users.push({ name, password, role, results: [] });
+            localStorage.setItem('users', JSON.stringify(users));
+            alert("Sign up successful! You can now login.");
+            window.location.href = 'login.html';
+        } else {
+            alert("Please fill in all fields.");
+        }
+    }
+</script>
+
+</body>
+</html>
